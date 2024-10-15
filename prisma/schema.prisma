@@ -14,3 +14,26 @@ datasource db {
 }
 
 // TODO: define models
+model Restaurant {
+  id           Int           @id @default(autoincrement())
+  name         String
+  reservations Reservation[]
+}
+
+model Reservation {
+  id   Int    @id @default(autoincrement())
+  date String
+
+  restaurant   Restaurant @relation(fields: [restaurantId], references: [id])
+  restaurantId Int
+
+  party Customer[]
+}
+
+model Customer {
+  id    Int    @id @default(autoincrement())
+  name  String
+  email String
+
+  reservations Reservation[]
+}
