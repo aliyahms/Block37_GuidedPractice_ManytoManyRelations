@@ -6,5 +6,6 @@ Content-Type: application/json
 
 {
   "restaurantId": 3,
-  "customerIds": [1,2,3]
+  "customerIds": [1,2,3],
+  "date": "All Day"
 }

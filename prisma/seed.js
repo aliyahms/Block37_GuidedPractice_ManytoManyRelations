@@ -33,7 +33,7 @@ const seed = async (
     // Create a new reservation w/ random id and connect to customers in party
     await prisma.reservation.create({
       data: {
-        date: Date.now().toDateString(),
+        date: new Date(Date.now()).toDateString(),
         restaurantId: 1 + Math.floor(Math.random() * numRestaurants),
         party: { connect: party },
       },
